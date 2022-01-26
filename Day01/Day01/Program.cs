@@ -13,17 +13,27 @@ namespace Day01
         private static void AllTheErrors()
         {
             int num = 13;
-            int denom = 0;
+            int denom = 1;
             int result;
             int[] numbers = { 22, 33, 44 };
 
             try
             {
                 result = num / denom;
+                result = numbers[5];
+                Console.WriteLine(result);
             }
-            catch( Exception e )
+            catch ( DivideByZeroException e )
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("You divided by Zero!!!");
+            }
+            catch ( IndexOutOfRangeException e)
+            {
+                Console.WriteLine("The array isn't that big!");
+            }
+            finally
+            {
+                Console.WriteLine("You are done");
             }
         }
 
